@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Muli', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    margin: 0;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #333;
+}
+
+.split{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.split.left{
+    background-image: url('ps5.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 0;
+}
+
+.split.left::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 51, 255, 0.63);
+}
+
+.split.right{
+    background-image: url('xbox.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    right: 0;
+}
+
+.split.right::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.59);
+}
+
+.split.left,
+.split.right,
+.split.right::before,
+.split.left::before{
+    transition: all 1000ms ease-in-out;
+}
+
+.split h1{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    font-size: 4rem;
+    color: white;
+    transform: translate(-50%);
+    white-space: nowrap;
+}
+
+.split .btn{
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    border: white solid 0.2rem;
+    text-decoration: none;
+    width: 15rem;
+    color: white;
+    padding: 1.5rem;
+    transform: translate(-50%);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.left .btn:hover{
+    background: rgba(0, 72, 255, 0.871);
+    border:0;
+}
+
+.right .btn:hover{
+    background: rgb(25, 100, 0);
+    border:0;
+}
+
+.hover-left .left{
+    width: 75%;
+    transition: width 0.4s ease;
+}
+.hover-left .right{
+    width: 25%;
+}
+
+.hover-right .right{
+    width: 75%;
+    transition: width 0.4s ease;
+}
+
+.hover-right .left{
+    width: 25%;
+}
